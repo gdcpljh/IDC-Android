@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:layout_marginLeft="24dp"
+    android:layout_marginRight="24dp"
+    android:layout_marginTop="@dimen/dimens_16dp">
+
+    <LinearLayout
+        android:id="@+id/linearTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/newTaskLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dimens_8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/linkColor"
+                    android:layout_marginRight="@dimen/dimens_8dp"
+                    android:src="@drawable/file_document_box_outline" />
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/newTask"
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="@string/tab_label_feed"
+                    android:textColor="#000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginRight="@dimen/dimens_16dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/linkColor" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="@dimen/dimens_8dp"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:id="@+id/onProgressTaskLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dimens_8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_jobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="#919191"
+                    android:layout_marginRight="@dimen/dimens_8dp"
+                    android:src="@drawable/briefcase_outline" />
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/onProgressTask"
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="@string/tab_label_jobs"
+                    android:textColor="#919191"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginRight="@dimen/dimens_16dp"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"
+                android:background="@color/linkColor"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

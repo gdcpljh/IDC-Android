@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/i_music"
+        android:checked="true"
+        android:icon="@drawable/ico_map_slctd"
+        android:title="@string/beranda" />
+
+    <!--must set the item title to empty-->
+    <item
+        android:id="@+id/i_empty"
+        android:title="" />
+
+    <item
+        android:id="@+id/i_favor"
+        android:icon="@drawable/ico_task"
+        android:title="@string/profile" />
+</menu>

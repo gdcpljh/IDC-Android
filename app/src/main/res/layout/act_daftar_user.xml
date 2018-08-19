@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_red"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/accb"
+            android:layout_width="240dp"
+            android:layout_height="300dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="64dp"
+            android:scaleType="fitEnd"
+            android:alpha="0.2"
+            android:src="@drawable/accent_login_dua" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            android:orientation="vertical">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:id="@+id/intro"
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="24dp"
+                android:text="Register"
+                android:textStyle="bold"
+                android:textColor="@color/material_blue"
+                android:textSize="18sp"
+                />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="32dp"
+                android:lineSpacingExtra="6dp"
+                android:text="Pastikan data yang anda masukan sudah benar dan anda menyetujui"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="-16dp"
+                    android:layout_marginTop="55dp"
+                    android:src="@drawable/shadow" />
+
+                <LinearLayout
+                    android:id="@+id/field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="64dp"
+                    android:background="@drawable/bg_white"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="24dp"
+                    android:paddingTop="16dp">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:hint="Masukan Email"
+                        android:textSize="16sp"
+                        app:met_hideUnderline="true"
+                        app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#e6e6e6" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/input_username"                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:hint="Nama Lengkap"
+                        android:textSize="16sp"
+                        app:met_hideUnderline="true"
+                        app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#e6e6e6" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/input_password"                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textSize="16sp"
+                        app:met_hideUnderline="true"
+                        app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/registBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/field"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="-25dp"
+                    android:background="@drawable/bg_button_login"
+                    android:padding="12dp">
+
+                    <com.pixplicity.fontview.FontAppCompatTextView
+                        style="@style/FontTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="Registrasi"
+                        android:textColor="#FFF"
+                        android:textSize="16.5sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

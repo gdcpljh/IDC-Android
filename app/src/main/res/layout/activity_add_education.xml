@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dimens_32dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimens_32dp"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_login"
+            android:padding="12dp">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="24dp"
+                android:text="Save Education"
+                android:textColor="#FFF"
+                android:textSize="16.5sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_32dp"
+        android:orientation="vertical">
+
+        <com.pixplicity.fontview.FontAppCompatTextView
+            style="@style/FontTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School"
+            android:textColor="#4d5a52"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_edittext"
+            android:orientation="horizontal">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Name"
+                android:nextFocusForward="@id/email"
+                android:singleLine="true"
+                android:textSize="14dp"
+                app:met_hideUnderline="true"
+                app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="From"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/year_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="yyyy"
+                    android:maxEms="4"
+                    android:nextFocusForward="@id/email"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    app:met_hideUnderline="true"
+                    app:met_maxCharacters="4"
+                    app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+            </LinearLayout>
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="24dp"
+                android:text="To"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/year_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="yyyy"
+                    android:maxEms="4"
+                    android:nextFocusForward="@id/email"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    app:met_hideUnderline="true"
+                    app:met_maxCharacters="4"
+                    app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="grey">#bfbfbf</color>
+    <color name="white">#fff</color>
+    <color name="black">#000000</color>
+    <color name="link_blue">#4d94ff</color>
+    <color name="darkRed">#cc0000</color>
+    <color name="colordarkRed">#cc0000</color>
+
+    <color name="mcam_color_light">#FAFAFA</color>
+    <color name="mcam_color_dark">#424242</color>
+
+    <color name="material_grey">#f5f5f7</color>
+    <color name="material_white">#ffffff</color>
+    <color name="material_blue">#246dcd</color>
+    <color name="transparent">#00000000</color>
+    <color name="linkColor">#FF416C</color>
+    <color name="grey_20">#919191</color>
+
+</resources>

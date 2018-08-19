@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/dimens_8dp"
+    android:orientation="vertical">
+
+    <com.pixplicity.fontview.FontAppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_year"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/grey_20"
+        android:textSize="12.5dp"
+        android:layout_marginBottom="4dp"
+        style="@style/FontTextViewStyle"
+        android:text="2012 - 2014"/>
+
+    <com.pixplicity.fontview.FontAppCompatTextView
+        android:layout_width="wrap_content"
+        android:textSize="14dp"
+        android:layout_marginRight="24dp"
+        android:layout_height="wrap_content"
+        android:text="University of China"
+        style="@style/FontTextViewStyle"/>
+
+</LinearLayout>

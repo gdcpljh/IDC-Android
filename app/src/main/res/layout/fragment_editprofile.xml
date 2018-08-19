@@ -1,0 +1,215 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_white"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:id="@+id/changeProfilePhoto"
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_photo"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="Change Photo"
+                android:textColor="@color/link_blue"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_32dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ed_profile_namalengkap"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Name"
+                    android:nextFocusForward="@id/email"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    app:met_hideUnderline="true"
+                    app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ed_profile_headline"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Headline"
+                    android:nextFocusForward="@id/email"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    app:met_hideUnderline="true"
+                    app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ed_profile_education"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_add_education"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="@dimen/dimens_8dp"
+                android:text="Add New Education"
+                android:textColor="@color/link_blue"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ed_profile_summary"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Add Summary"
+                    android:nextFocusForward="@id/email"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    app:met_hideUnderline="true"
+                    app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ed_profile_website"
+                android:textColor="#4d5a52"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/round_edittext"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ed_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Website"
+                    android:nextFocusForward="@id/email"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    app:met_hideUnderline="true"
+                    app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="id.co.ale.rainbowDev.ChatActivity">
+
+    <item
+        android:id="@+id/contact_chat"
+        android:icon="@drawable/ic_contact_chat"
+        app:showAsAction="always"
+        android:title="@string/contact"/>
+
+    <item
+        android:id="@+id/open_menu"
+        android:icon="@drawable/ic_open_menu"
+        app:showAsAction="always"
+        android:title="Open">
+        <menu>
+            <item
+                android:id="@+id/call"
+                android:icon="@drawable/ic_contact_phone"
+                android:orderInCategory="100"
+                android:iconTint="@android:color/white"
+                android:title="@string/chat_voice_call" />
+
+            <item
+                android:id="@+id/video_call"
+                android:icon="@drawable/ic_contact_video"
+                android:orderInCategory="100"
+                android:iconTint="@android:color/white"
+                android:title="@string/chat_video_call"
+                />
+        </menu>
+    </item>
+</menu>

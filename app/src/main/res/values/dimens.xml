@@ -11,6 +11,8 @@
     <dimen name="mcam_action_icon_size">56dp</dimen>
     <dimen name="mcam_action_icon_size_smaller">48dp</dimen>
 
+    <dimen name="separator_height">1dp</dimen>
+    <dimen name="button">70dp</dimen>
 
 
     <dimen name="evp_content_inset">16dp</dimen>

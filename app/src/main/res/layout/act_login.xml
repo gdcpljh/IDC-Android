@@ -63,7 +63,7 @@
                 android:layout_marginLeft="64dp"
                 android:layout_marginTop="16dp"
                 android:lineSpacingExtra="6dp"
-                android:text="Abdi butuh wording ieu \nkumaha euy"
+                android:text="@string/label_login_desc"
                 android:textColor="#ffffff"
                 android:textSize="18sp" />
 

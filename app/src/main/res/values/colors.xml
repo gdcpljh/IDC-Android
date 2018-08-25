@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="conavigation_list_background">#4A4A4A</color>
+    <color name="conavigation_list_color">#fff</color>
+
+    <color name="colorPrimary">#cc0000</color>
+    <color name="colorPrimaryDark">#cc0000</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="grey">#bfbfbf</color>
@@ -20,5 +23,31 @@
     <color name="transparent">#00000000</color>
     <color name="linkColor">#FF416C</color>
     <color name="grey_20">#919191</color>
+
+    <color name="colorListConversation">#bdbdbd</color>
+    <color name="colorChatHint">#777777</color>
+    <color name="unread">#2ecc71</color>
+
+    <color name="colorRoundPhoto">#9b59b6</color>
+    <color name="colorListConversationName">#2c3e50</color>
+    <color name="colorListConversationMsg">#34495e</color>
+
+    <color name="colorListContactName">#2c3e50</color>
+    <color name="colorListContactPresence">#34495e</color>
+
+    <color name="colorChatMsg">#333333</color>
+    <color name="colorChatDate">#555555</color>
+    <color name="colorChatBgRoom">#ffffff</color>
+    <color name="colorChatBg1">#ffffff</color>
+    <color name="colorChatBg2">#ffbe7f</color>
+
+    <color name="separator1">#ecf0f1</color>
+    <color name="separator2">#bdc3c7</color>
+    <color name="separator3">#95a5a6</color>
+
+    <color name="colorBgLogin">#ffffff</color>
+
+    <color name="colorProfileText">#ffffff</color>
+    <color name="colorProfileBg">#32302f</color>
 
 </resources>

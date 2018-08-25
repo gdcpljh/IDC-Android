@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="id.co.ale.rainbowDev.ChatActivity"
+    >
+
+    <item
+        android:id="@+id/open_menu"
+        android:icon="@drawable/ic_open_menu"
+        app:showAsAction="always"
+        android:title="Open">
+        <menu>
+            <item
+                android:id="@+id/profile"
+                android:icon="@drawable/ic_chat_prof"
+                android:orderInCategory="100"
+                android:title="@string/chat_profile"
+                />
+
+            <!--<item-->
+                <!--android:id="@+id/call"-->
+                <!--android:icon="@drawable/ic_chat_call"-->
+                <!--android:orderInCategory="100"-->
+                <!--android:title="@string/chat_voice_call" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/video_call"-->
+                <!--android:icon="@drawable/ic_chat_vcall"-->
+                <!--android:orderInCategory="100"-->
+                <!--android:title="@string/chat_video_call"-->
+                <!--/>-->
+
+            <item
+                android:id="@+id/clear"
+                android:icon="@drawable/ic_chat_clear"
+                android:orderInCategory="100"
+                android:title="@string/chat_clear" />
+
+            <item
+                android:id="@+id/background"
+                android:icon="@drawable/ic_chat_bg"
+                android:orderInCategory="100"
+                android:title="@string/chat_background" />
+
+            <item
+                android:id="@+id/background_reset"
+                android:icon="@drawable/ic_chat_bg_remove"
+                android:orderInCategory="100"
+                android:title="@string/chat_background_reset"
+                android:visible="false" />
+
+            <!--<item-->
+                <!--android:title="Translate"-->
+                <!--android:icon="@drawable/ic_globe"-->
+                <!--&gt;-->
+                <!--<menu>-->
+                    <!--<item-->
+                        <!--android:id="@+id/translate_off"-->
+                        <!--android:title="Off"-->
+                        <!--/>-->
+                    <!--<item-->
+                        <!--android:id="@+id/translate_bengali"-->
+                        <!--android:title="বাঙালি"-->
+                        <!--/>-->
+                    <!--<item-->
+                        <!--android:id="@+id/translate_tamil"-->
+                        <!--android:title="Tamil"-->
+                        <!--/>-->
+                    <!--<item-->
+                        <!--android:id="@+id/translate_english"-->
+                        <!--android:title="English"-->
+                        <!--/>-->
+                    <!--<item-->
+                        <!--android:id="@+id/translate_china"-->
+                        <!--android:title="中国" />-->
+                <!--</menu>-->
+            <!--</item>-->
+        </menu>
+    </item>
+</menu>

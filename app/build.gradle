@@ -25,15 +25,46 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+        maven { url "http://dl.bintray.com/amulyakhare/maven" }
+        maven { url "https://maven.google.com" }
+        maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+        maven { url "http://maven.openrainbow.io" }
+        mavenCentral()
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:support-v4:28.0.0-rc01'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //RAINBOW
+    implementation files('libs/zxingorg-3.3.0-sources.jar')
+    implementation('com.ale:rainbowsdk:1.43.0@aar') {
+        transitive = true
+    }
+
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    implementation 'com.github.GrenderG:Toasty:1.2.5'
+    implementation 'net.the4thdimension:audio-wife:1.0.3'
+    implementation 'com.github.stfalcon:frescoimageviewer:0.5.0'
+    implementation 'com.jsibbold:zoomage:1.1.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.5.+'
+    implementation 'jp.wasabeef:blurry:2.1.1'
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.journeyapps:zxing-android-embedded:2.0.1@aar'
+    implementation 'com.journeyapps:zxing-android-legacy:2.0.1@aar'
+    implementation 'com.journeyapps:zxing-android-integration:2.0.1@aar'
+    implementation 'com.google.zxing:core:3.2.0'
 
     // BUTTERKNIFE
     implementation 'com.jakewharton:butterknife:8.0.1'
@@ -44,6 +75,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.pixplicity.letterpress:library:1.0'
     implementation 'com.joooonho:selectableroundedimageview:1.0.1'
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
 
     //NAVIGATION
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.1.9'

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Baberes</string>
+    <string name="app_name">Diaspora Connect</string>
 
     <!-- fragment names -->
     <string name="edit_profile_fragment">Edit Profile</string>
@@ -8,6 +8,7 @@
     <string name="profile_fragment">Profile</string>
     <string name="view_profile_fragment">ViewProfile</string>
     <string name="view_comments_fragment">View Comments</string>
+    <string name="label_login_desc">Portal of Indonesian Diaspora to collaboration for better Indonesia!</string>
 
     <!-- dialog names -->
     <string name="confirm_password_dialog">ConfirmPaswordDialog</string>
@@ -47,7 +48,6 @@
     <string name="field_duration">duration</string>
     <string name="field_profile_photo">profile_photo</string>
     <string name="field_timestamp">timestamp</string>
-
 
 
     <!-- photo types -->
@@ -134,6 +134,8 @@
     <string name="btn_lanjut">Lanjut</string>
     <string name="btn_kembali">Kembali</string>
     <string name="beranda">Beranda</string>
+    <string name="contact">Kontak</string>
+    <string name="chat">Chat</string>
     <string name="profile">Profile</string>
     <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</string>
     <string name="tab_label_feed">Timeline</string>
@@ -144,4 +146,104 @@
     <string name="ed_profile_education">Education</string>
     <string name="ed_profile_summary">Summary</string>
     <string name="ed_profile_website">Website</string>
+
+    <!--NOTIFICATION-->
+    <string name="notif_connected">Connected</string>
+    <string name="notif_connecting">Connecting</string>
+    <string name="notif_missed_call_title">Missed call</string>
+
+    <!--IMSG MENU-->
+    <string name="imsg_menu_myprofile">My Profile</string>
+    <string name="imsg_menu_invitation">Invitation</string>
+    <string name="imsg_menu_setting">Setting</string>
+    <string name="imsg_menu_about">About</string>
+    <string name="imsg_menu_logout">Logout</string>
+
+    <!--CHAT MENU-->
+    <string name="chat_profile">Contact information</string>
+    <string name="chat_group_profile">Group information</string>
+    <string name="chat_voice_call">Voice call</string>
+    <string name="chat_video_call">Video call</string>
+    <string name="chat_clear">Clear conversation</string>
+    <string name="chat_background">Change background</string>
+    <string name="chat_background_reset">Reset background</string>
+    <string name="select_picture">Select picture</string>
+
+    <string name="file_received">File received</string>
+    <string name="image_received">Image received</string>
+    <string name="voice_received">Voice received</string>
+    <string name="video_received">Video received</string>
+
+    <string name="answered_call">Answered call</string>
+    <string name="missed_call">Missed call</string>
+
+    <string name="bottom_nav_chat">Chats</string>
+    <string name="bottom_nav_feeds">Feeds</string>
+    <string name="bottom_nav_bubbles">Group</string>
+    <string name="bottom_nav_contacts">Contacts</string>
+    <string name="bottom_nav_event">Log</string>
+
+    <string name="just_now">just now</string>
+    <string name="yesterday">yesterday</string>
+
+    <string name="default_string_photo" translatable="false">\?</string>
+
+    <string name="toolbar_search">Search</string>
+    <string name="create_bubble">Create new group</string>
+
+    <string name="confirmation">Confirmation</string>
+    <string name="accept_video_call">Accept video call</string>
+
+    <string name="outgoing_call">Calling</string>
+    <string name="incoming_call">Incoming call</string>
+
+    <string name="confirm_delete_bubble">Do you really to delete this group?</string>
+    <string name="confirm_delete_user">Do you really to delete this user?</string>
+    <string name="confirm_leave_group">Do you really to leave this group?</string>
+    <string name="confirm_delete_conversation">Do you really to clear this conversation?</string>
+    <!--TOAST-->
+    <string name="toast_bubble_name">Please input group\'s name</string>
+    <string name="toast_bubble_subject">Please input groups\'s subject</string>
+    <string name="toast_bubble_member">You must select one member minimum</string>
+    <string name="toast_broadcast_contact">You must select one contact minimum</string>
+    <string name="toast_bubble_created">Group has been created</string>
+    <string name="toast_bubble_failed">Create group failed</string>
+
+    <string name="members">members</string>
+    <string name="created_on">Created on</string>
+    <string name="created_by">by</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_chat" translatable="false"></string>
+
+
+    <string name="title_activity_contact_detail" translatable="false">ContactDetailActivity</string>
+    <string name="title_activity_room_detail" translatable="false">ContactDetailActivity</string>
+    <string name="title_activity_profile" translatable="false">ProfileActivity</string>
+    <string name="title_activity_voice_call" translatable="false">VoiceCallActivity</string>
+    <string name="chatHint">Enter message here...</string>
+    <string name="loading_text">loading...</string>
+
+    <string name="title_activity_invitation">Invitation</string>
+    <string name="rcv_invitation">Invitation Received</string>
+    <string name="sent_invitation">Invitation Sent</string>
+
+    <string name="title_activity_room_create">New Group</string>
+    <string name="create_bubble_name">Group name</string>
+    <string name="create_bubble_subject">Group subject</string>
+    <string name="create">Create</string>
+    <string name="select_members">Select members</string>
+    <string name="no_member">Currently no member</string>
+    <string name="delete_bubble">Delete Group</string>
+
+    <string name="title_activity_comment">Comment</string>
+    <string name="invite_members">Invite members</string>
+    <string name="pending">Invitation sent</string>
+    <string name="preview_background">Preview</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="title_activity_broadcast">Broadcast</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_about">About App</string>
 </resources>

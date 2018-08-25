@@ -1,0 +1,124 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp"
+    >
+
+    <ImageView
+        android:id="@+id/sender_photo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bt_answercall_video_active" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/content_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/retrieve_msg"
+        android:paddingTop="4dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/sender_photo"
+        app:layout_constraintTop_toTopOf="@+id/sender_photo">
+
+        <TextView
+            android:id="@+id/content_message"
+            android:maxWidth="220dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:text="@string/loading_text"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/file_preview"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:background="#eeeeee"
+            android:minHeight="50dp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content_message" />
+
+        <RelativeLayout
+            android:id="@+id/media_player_container"
+            android:layout_width="200dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="6dp"
+            android:background="#000"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content_message">
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/download_progress"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/file_preview"
+            app:layout_constraintLeft_toLeftOf="@+id/file_preview"
+            app:layout_constraintRight_toRightOf="@+id/file_preview"
+            app:layout_constraintTop_toTopOf="@+id/file_preview" />
+
+        <ImageView
+            android:id="@+id/file_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/file_preview"
+            app:layout_constraintLeft_toLeftOf="@+id/file_preview"
+            app:layout_constraintRight_toRightOf="@+id/file_preview"
+            app:layout_constraintTop_toTopOf="@+id/file_preview"
+            app:layout_constraintVertical_bias="0.25"
+            app:srcCompat="@drawable/ic_pdf" />
+
+        <TextView
+            android:id="@+id/file_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="7dp"
+            android:text="00 KB"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/file_preview"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/message_date"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="00:00 PM"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/content_layout"
+        app:layout_constraintLeft_toRightOf="@+id/content_layout"
+        android:layout_marginStart="8dp" />
+
+</android.support.constraint.ConstraintLayout>

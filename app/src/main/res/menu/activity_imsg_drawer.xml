@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_user"
+        android:icon="@drawable/ic_menu_user"
+        android:title="@string/imsg_menu_myprofile" />
+
+    <item
+        android:id="@+id/nav_invitation"
+        android:icon="@drawable/ic_menu_invitation"
+        android:title="@string/imsg_menu_invitation" />
+
+    <item
+        android:id="@+id/nav_setting"
+        android:icon="@drawable/ic_menu_setting"
+        android:title="@string/imsg_menu_setting"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_menu_about"
+        android:title="@string/imsg_menu_about" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_menu_logout"
+        android:title="@string/imsg_menu_logout" />
+
+
+</menu>

@@ -17,14 +17,14 @@
             android:background="@drawable/background_gradient"
             app:itemIconTint="@color/selector_bottombar"
             android:padding="12dp"
-            app:itemTextColor="#bbffffff"
+            app:itemTextColor="@color/selector_bottombar"
             app:menu="@menu/menu_navigation_center_fab" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/bnve" />
+            android:layout_above="@+id/bnve"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:src="@drawable/ic_add_circle_black_24dp"
             android:tint="#353535"
             app:backgroundTint="#ffffff"

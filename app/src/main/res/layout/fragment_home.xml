@@ -20,12 +20,12 @@
             android:visibility="gone"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <com.example.helmi.diaspora.utils.CustomViewPager
+        <com.id.connect.diaspora.utils.CustomViewPager
             android:id="@+id/tab_viewpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        </com.example.helmi.diaspora.utils.CustomViewPager>
+        </com.id.connect.diaspora.utils.CustomViewPager>
     </LinearLayout>
 
     <!--

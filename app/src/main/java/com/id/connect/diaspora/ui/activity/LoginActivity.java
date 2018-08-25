@@ -7,11 +7,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -25,6 +27,11 @@ import com.ale.listener.StartResponseListener;
 import com.ale.rainbowsdk.Connection;
 import com.ale.rainbowsdk.RainbowSdk;
 import com.ale.service.RainbowService;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.id.connect.diaspora.MainActivity;
 import com.id.connect.diaspora.R;
 import com.id.connect.diaspora.service.MessengerService;
@@ -70,12 +77,15 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     private String savedMail;
     private String []listsavedMail;
     private ProgressDialog pDialog;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_login);
         ButterKnife.bind(this);
+
+        mAuth = FirebaseAuth.getInstance();
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Please wait..");
 
@@ -96,6 +106,14 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
             }
         });
 
+        btn_sign_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterFirstActivity.class);
+                startActivity(intent);
+            }
+        });
+
         validator = new Validator(this);
         validator.setValidationListener(this);
     }
@@ -108,7 +126,24 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
             return;
         }
 
-        RainbowSdk.instance().connection().signin(pUsername, pPassword, Util.RAINBOW_HOST, signinResponseListener);
+        mAuth.signInWithEmailAndPassword(pUsername, pPassword)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("signInWithEmail", "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            RainbowSdk.instance().connection().signin(pUsername, pPassword, Util.RAINBOW_HOST, signinResponseListener);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("signInWithEmail", "signInWithEmail:failure", task.getException());
+                            Toasty.error(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
     }
 
     private SigninResponseListener signinResponseListener = new SigninResponseListener() {
@@ -134,7 +169,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
                     NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                     mNotificationManager.notify(RainbowService.EVENT_NOTIFICATION, notificationBuilder.build());
-//                    mNotificationManager.cancel(RainbowService.EVENT_NOTIFICATION);
 
                     MessengerService.getInstance().startService();
                 }
@@ -146,12 +180,9 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
             editor.putString(Util.PASSWORD_CODE, rPassword);
             editor.commit();
             pDialog.dismiss();
-//            setResult(RESULT_OK);
             Intent intent = new Intent(RainbowSdk.instance().getContext(), MainActivity.class);
             startActivity(intent);
             finish();
-
-
         }
 
         @Override
@@ -160,7 +191,8 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toasty.error(getBaseContext(), "Login fail").show();
+                    pDialog.dismiss();
+                    Toasty.error(getBaseContext(), "Account not registered at Rainbow, please register for Rainbow Platform").show();
                 }
             });
         }

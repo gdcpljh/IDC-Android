@@ -120,7 +120,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-10dp">
+                android:layout_marginTop="-35dp">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -197,6 +197,26 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="center">
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Powered by"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/rainbow"/>
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_red"
@@ -77,11 +76,11 @@
                     android:paddingBottom="16dp">
 
                     <com.rengwuxian.materialedittext.MaterialEditText xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/input_email"
+                        android:id="@+id/input_city"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="24dp"
-                        android:hint="Masukan Email"
+                        android:hint="Kota Saat Ini"
                         android:textSize="16sp"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />
@@ -94,11 +93,11 @@
                         android:background="#e6e6e6" />
 
                     <com.rengwuxian.materialedittext.MaterialEditText xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/input_username"
+                        android:id="@+id/input_hometown"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="24dp"
-                        android:hint="Nama Lengkap"
+                        android:hint="Kota Kelahiran"
                         android:textSize="16sp"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />
@@ -111,11 +110,11 @@
                         android:background="#e6e6e6" />
 
                     <com.rengwuxian.materialedittext.MaterialEditText xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/input_password"
+                        android:id="@+id/input_major"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="24dp"
-                        android:hint="Password"
+                        android:hint="Jurusan Kuliah/Keahlian"
                         android:inputType="textPassword"
                         android:textSize="16sp"
                         app:met_hideUnderline="true"
@@ -130,11 +129,29 @@
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/input_country"
+                        android:id="@+id/input_status"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="24dp"
-                        android:hint="Negara"
+                        android:hint="Jejang Pendidikan/Jabatan"
+                        android:textSize="16sp"
+                        app:met_hideUnderline="true"
+                        app:met_typeface="fonts/ProductSansRegular.ttf" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="#e6e6e6" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/input_institution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:hint="Universitas/Institusi"
                         android:textSize="16sp"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />
@@ -157,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
-                        android:text="Berikutnya"
+                        android:text="Registrasi"
                         android:textColor="#FFF"
                         android:textSize="16.5sp"
                         android:textStyle="bold" />

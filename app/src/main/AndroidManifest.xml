@@ -60,6 +60,8 @@
         </activity>
         <activity android:name=".ui.activity.ContactDetailActivity" />
         <activity android:name=".ui.activity.ChatRoomActivity" />
+        <activity android:name=".ui.activity.RegisterFirstActivity" />
+        <activity android:name=".ui.activity.RegisterSecondActivity" />
         <activity android:name=".ui.activity.RoomDetailActivity"></activity>
     </application>
 

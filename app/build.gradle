@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.helmi.diaspora"
+        applicationId "com.id.connect.diaspora"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -47,6 +47,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //FIREBASE
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation 'com.google.firebase:firebase-firestore:17.1.0'
+
     //RAINBOW
     implementation files('libs/zxingorg-3.3.0-sources.jar')
     implementation('com.ale:rainbowsdk:1.43.0@aar') {
@@ -89,3 +94,4 @@ dependencies {
     implementation 'com.github.devsideal:ReadMoreOption:1.0.0'
 
 }
+apply plugin: 'com.google.gms.google-services'

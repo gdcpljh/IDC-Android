@@ -1,20 +1,12 @@
 package com.id.connect.diaspora;
 
-import android.Manifest;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,45 +17,26 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ale.infra.application.RainbowIntent;
-import com.ale.listener.SigninResponseListener;
-import com.ale.listener.StartResponseListener;
-import com.ale.rainbowsdk.Connection;
-import com.ale.rainbowsdk.RainbowSdk;
-import com.ale.service.RainbowService;
 import com.id.connect.diaspora.databinding.ActivityCenterFabBinding;
-import com.id.connect.diaspora.service.MessengerService;
-import com.id.connect.diaspora.ui.activity.LoginActivity;
 import com.id.connect.diaspora.ui.fragment.ContactsFragment;
 import com.id.connect.diaspora.ui.fragment.ConversationFragment;
 import com.id.connect.diaspora.ui.fragment.HomeFragment;
-import com.id.connect.diaspora.utils.Util;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private ActivityCenterFabBinding bind;
     private VpAdapter adapter;
-
-    // collections
-    private List<Fragment> fragments;// used for ViewPager adapter
+    private List<Fragment> fragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_with_view_pager);
         bind = DataBindingUtil.setContentView(this, R.layout.activity_center_fab);
-
         initData();
         initView();
         initEvent();
     }
-
 
     /**
      * create fragments
@@ -94,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         bundle = new Bundle();
         bundle.putString("title", getString(R.string.profile));
         visibilityFragment.setArguments(bundle);
-
 
         // add to fragments for adapter
         fragments.add(musicFragment);

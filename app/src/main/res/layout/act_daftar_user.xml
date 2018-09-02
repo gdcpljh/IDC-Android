@@ -33,8 +33,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="64dp"
                 android:layout_marginTop="24dp"
-                android:text="Register"
-                android:textColor="@color/material_blue"
+                android:text="Register (1/2)"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -83,6 +83,7 @@
                         android:layout_marginRight="24dp"
                         android:hint="Masukan Email"
                         android:textSize="16sp"
+                        app:met_floatingLabel="normal"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />
 
@@ -100,6 +101,7 @@
                         android:layout_marginRight="24dp"
                         android:hint="Nama Lengkap"
                         android:textSize="16sp"
+                        app:met_floatingLabel="normal"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />
 
@@ -118,6 +120,7 @@
                         android:hint="Password"
                         android:inputType="textPassword"
                         android:textSize="16sp"
+                        app:met_floatingLabel="normal"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />
 
@@ -135,6 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="24dp"
                         android:hint="Negara"
+                        app:met_floatingLabel="normal"
                         android:textSize="16sp"
                         app:met_hideUnderline="true"
                         app:met_typeface="fonts/ProductSansRegular.ttf" />

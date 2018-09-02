@@ -37,7 +37,7 @@ allprojects {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
@@ -46,18 +46,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     //FIREBASE
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
     implementation 'com.google.firebase:firebase-firestore:17.1.0'
-
     //RAINBOW
     implementation files('libs/zxingorg-3.3.0-sources.jar')
     implementation('com.ale:rainbowsdk:1.43.0@aar') {
         transitive = true
     }
-
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     implementation 'com.github.GrenderG:Toasty:1.2.5'
     implementation 'net.the4thdimension:audio-wife:1.0.3'
@@ -70,11 +67,9 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-legacy:2.0.1@aar'
     implementation 'com.journeyapps:zxing-android-integration:2.0.1@aar'
     implementation 'com.google.zxing:core:3.2.0'
-
     // BUTTERKNIFE
     implementation 'com.jakewharton:butterknife:8.0.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.0.1'
-
     // WIDGET
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
@@ -82,16 +77,13 @@ dependencies {
     implementation 'com.joooonho:selectableroundedimageview:1.0.1'
     implementation 'com.karumi:dexter:5.0.0'
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
-
     //NAVIGATION
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.1.9'
-
     //IMAGEPICKER
     implementation 'com.asksira.android:bsimagepicker:1.0.1'
-
     //ReadMore
     //url github : https://android-arsenal.com/details/1/7058
     implementation 'com.github.devsideal:ReadMoreOption:1.0.0'
-
+    implementation 'com.android.support:recyclerview-v7:28.0.0-rc01'
 }
 apply plugin: 'com.google.gms.google-services'

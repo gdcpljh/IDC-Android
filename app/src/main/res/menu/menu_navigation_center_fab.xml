@@ -3,12 +3,12 @@
     <item
         android:id="@+id/i_music"
         android:checked="true"
-        android:icon="@drawable/ico_map_slctd"
+        android:icon="@drawable/home_outline"
         android:title="@string/beranda" />
 
     <item
         android:id="@+id/i_contact"
-        android:icon="@drawable/ico_map_slctd"
+        android:icon="@drawable/feature_search_outline"
         android:title="@string/contact" />
 
     <!--must set the item title to empty-->
@@ -18,11 +18,11 @@
 
     <item
         android:id="@+id/i_chat"
-        android:icon="@drawable/ico_map_slctd"
+        android:icon="@drawable/comment_text_outline"
         android:title="@string/chat" />
 
     <item
         android:id="@+id/i_favor"
-        android:icon="@drawable/ico_task"
+        android:icon="@drawable/account_outline"
         android:title="@string/profile" />
 </menu>

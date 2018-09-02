@@ -28,8 +28,9 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
+            <com.pixplicity.fontview.FontAppCompatTextView
                 android:id="@+id/contact_name"
+                style="@style/FontTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,8 +52,9 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
+            <com.pixplicity.fontview.FontAppCompatTextView
                 android:id="@+id/last_message"
+                style="@style/FontTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
@@ -60,10 +62,11 @@
                 android:layout_weight="1"
                 android:maxLines="1"
                 android:text="@string/loading_text"
-                android:textColor="@color/colorListConversationMsg"></TextView>
+                android:textColor="@color/colorListConversationMsg"></com.pixplicity.fontview.FontAppCompatTextView>
 
-            <TextView
+            <com.pixplicity.fontview.FontAppCompatTextView
                 android:id="@+id/unread"
+                style="@style/FontTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
                 android:layout_margin="6dp"

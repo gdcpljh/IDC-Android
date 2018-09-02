@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="4dp"
-    android:paddingTop="4dp"
-    >
+    android:paddingTop="4dp">
 
     <ImageView
         android:id="@+id/sender_photo"
@@ -24,23 +23,26 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/retrieve_msg"
-        android:paddingTop="4dp"
         android:paddingBottom="12dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
+        android:paddingTop="4dp"
         app:layout_constraintLeft_toRightOf="@+id/sender_photo"
         app:layout_constraintTop_toTopOf="@+id/sender_photo">
 
-        <TextView
+        <com.pixplicity.fontview.FontAppCompatTextView
             android:id="@+id/content_message"
-            android:maxWidth="220dp"
+            style="@style/FontTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="0dp"
             android:layout_marginBottom="4dp"
-            android:layout_marginTop="4dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:lineSpacingExtra="4dp"
+            android:maxWidth="220dp"
+            android:padding="0dp"
+            android:textSize="14dp"
             android:text="@string/loading_text"
             android:textAlignment="viewStart"
             android:textColor="#000000"
@@ -115,10 +117,10 @@
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="00:00 PM"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/content_layout"
-        app:layout_constraintLeft_toRightOf="@+id/content_layout"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintLeft_toRightOf="@+id/content_layout" />
 
 </android.support.constraint.ConstraintLayout>

@@ -32,6 +32,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.id.connect.diaspora.MainActivity;
 import com.id.connect.diaspora.R;
 import com.id.connect.diaspora.service.MessengerService;
@@ -78,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     private String []listsavedMail;
     private ProgressDialog pDialog;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,11 +180,28 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 }
             });
 
-            SharedPreferences sp = getPreferences(Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sp.edit();
-            editor.putString(Util.USERNAME_CODE, rUsername);
-            editor.putString(Util.PASSWORD_CODE, rPassword);
-            editor.commit();
+            db.collection("diasporas")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    if(document.getData().get("email").equals(input_email.getText().toString())) {
+                                        Log.d("Koleksi", document.getId() + " => " + document.getData().get("email"));
+                                        SharedPreferences.Editor editor = getSharedPreferences("userLogin", MODE_PRIVATE).edit();
+                                        editor.putString(Util.USERNAME_CODE, rUsername);
+                                        editor.putString(Util.PASSWORD_CODE, rPassword);
+                                        editor.putString(Util.DIASPORAS_CODE, document.getId());
+                                        editor.apply();
+                                    }
+                                }
+                            } else {
+                                Log.d("", "Error getting documents: ", task.getException());
+                            }
+                        }
+                    });
+
             pDialog.dismiss();
             Intent intent = new Intent(RainbowSdk.instance().getContext(), MainActivity.class);
             startActivity(intent);

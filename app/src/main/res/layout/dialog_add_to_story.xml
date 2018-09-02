@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-              android:orientation="horizontal"
-    android:padding="10dp"
-    android:id="@+id/linLayout1">
+    android:id="@+id/linLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
     <TextView
-        android:minWidth="400dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="400dp"
         android:text="Add to Your Story"
-        android:textSize="14sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/et_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="What's in your mind?"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:lines="3"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        android:id="@+id/btn_post"
+        android:padding="12dp"
+        android:background="@drawable/white_rounded_button"/>
 
 </LinearLayout>

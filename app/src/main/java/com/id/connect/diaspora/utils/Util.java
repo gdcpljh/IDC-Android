@@ -50,6 +50,7 @@ import java.util.HashMap;
 public class Util {
     public static String USERNAME_CODE = "u123321u";
     public static String PASSWORD_CODE = "p123321p";
+    public static String DIASPORAS_CODE = "d123321d";
 
     public static String AUTO_TRANSLATE = "off";
 

@@ -1,5 +1,9 @@
 package com.id.connect.diaspora;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,18 +13,34 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.id.connect.diaspora.databinding.ActivityCenterFabBinding;
+import com.id.connect.diaspora.ui.activity.LoginActivity;
+import com.id.connect.diaspora.ui.activity.RegisterSecondActivity;
 import com.id.connect.diaspora.ui.fragment.ContactsFragment;
 import com.id.connect.diaspora.ui.fragment.ConversationFragment;
 import com.id.connect.diaspora.ui.fragment.HomeFragment;
+import com.id.connect.diaspora.utils.Util;
+import com.jsibbold.zoomage.ZoomageView;
+import com.rengwuxian.materialedittext.MaterialEditText;
+
+import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityCenterFabBinding bind;
     private VpAdapter adapter;
     private List<Fragment> fragments;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,9 +173,58 @@ public class MainActivity extends AppCompatActivity {
         bind.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Center", Toast.LENGTH_SHORT).show();
+                showDialog();
             }
         });
+    }
+
+    private void showDialog() {
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_add_to_story);
+        MaterialEditText et_status = (MaterialEditText) dialog.findViewById(R.id.et_status);
+        AppCompatButton btn_post = (AppCompatButton) dialog.findViewById(R.id.btn_post);
+
+        btn_post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(et_status.getText().toString().isEmpty()) {
+                    et_status.setError("Required!");
+                    return;
+                }
+
+                //Post to DB
+                postStatus(et_status.getText().toString());
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void postStatus(String status) {
+        SharedPreferences sp = getSharedPreferences("userLogin", MODE_PRIVATE);
+        String diaspora_key = sp.getString(Util.DIASPORAS_CODE, "");
+        Date currentTime = Calendar.getInstance().getTime();
+
+        Map<String, Object> user = new HashMap<>();
+        user.put("diaspora_key", diaspora_key);
+        user.put("status", status);
+        user.put("created_at", currentTime.toString());
+
+        db.collection("story")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toasty.success(MainActivity.this, "Status has been posted!").show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("DocumentReference", "Error adding document", e);
+                    }
+                });
     }
 
     /**

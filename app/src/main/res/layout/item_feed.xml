@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="4dp"
-                android:text="Hendry Saputra"
+                android:text=""
                 android:textColor="#151515"
                 android:textSize="13dp"
                 android:textStyle="bold" />
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:lineSpacingExtra="4dp"
-                android:text="2m ago"
+                android:text=""
                 android:textColor="#8b8b8b"
                 android:textSize="11dp" />
 
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="2dp"
-            android:text="Software Engineer"
+            android:text=""
             android:textColor="#616161"
             android:textSize="12dp" />
 
@@ -72,9 +72,9 @@
             <com.joooonho.SelectableRoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/iv_gambar"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/halte"
+                android:adjustViewBounds="true"
                 app:sriv_left_bottom_corner_radius="4dip"
                 app:sriv_left_top_corner_radius="4dip"
                 app:sriv_right_bottom_corner_radius="4dip"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:lineSpacingExtra="6dp"
-            android:text="Ini fasilitas umum halte depan IAIN kurang layak dari kursi dan lantainya di mohon pengertiannya"
+            android:text=""
             android:textColor="#8b8b8b"
             android:textSize="14sp" />
 
@@ -106,12 +106,14 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/iv_like"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginRight="8dp"
                     android:src="@drawable/thumb_up_outline" />
 
                 <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/tv_like"
                     style="@style/FontTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,7 +164,8 @@
                 android:id="@+id/btn_share"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/share_variant"/>
+                android:src="@drawable/share_variant"
+                android:visibility="gone"/>
 
         </LinearLayout>
 

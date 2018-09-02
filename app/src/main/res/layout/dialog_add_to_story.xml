@@ -24,6 +24,22 @@
         android:lines="3"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:id="@+id/iv_story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:maxHeight="250dp"
+            android:src="@drawable/ic_photo_black_24dp"
+            android:tint="@color/cardview_dark_background"/>
+    </LinearLayout>
+
     <android.support.v7.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

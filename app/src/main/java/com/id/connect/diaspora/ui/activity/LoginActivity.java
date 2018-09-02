@@ -37,6 +37,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.id.connect.diaspora.MainActivity;
 import com.id.connect.diaspora.R;
 import com.id.connect.diaspora.service.MessengerService;
@@ -83,7 +85,9 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     private String []listsavedMail;
     private ProgressDialog pDialog;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static FirebaseStorage storage = FirebaseStorage.getInstance();
+    public static StorageReference storageRef = storage.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,7 +184,8 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 }
             });
 
-            db.collection("diasporas")
+            LoginActivity.db
+                    .collection("diasporas")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override

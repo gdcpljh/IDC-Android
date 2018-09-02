@@ -23,6 +23,10 @@ android {
     dataBinding {
         enabled true
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 allprojects {
@@ -51,6 +55,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
     implementation 'com.google.firebase:firebase-firestore:17.1.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
 
     //RAINBOW
     implementation files('libs/zxingorg-3.3.0-sources.jar')
@@ -92,6 +97,9 @@ dependencies {
     //ReadMore
     //url github : https://android-arsenal.com/details/1/7058
     implementation 'com.github.devsideal:ReadMoreOption:1.0.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
 apply plugin: 'com.google.gms.google-services'

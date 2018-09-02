@@ -24,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.id.connect.diaspora.R;
+import com.id.connect.diaspora.service.MessengerService;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
@@ -71,7 +72,6 @@ public class RegisterSecondActivity extends AppCompatActivity implements Validat
     private String status;
     private String institusi;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +117,8 @@ public class RegisterSecondActivity extends AppCompatActivity implements Validat
         status = input_status.getText().toString();
         institusi = input_institution.getText().toString();
 
-        db.collection("diasporas")
+        LoginActivity.db
+                .collection("diasporas")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -164,7 +165,8 @@ public class RegisterSecondActivity extends AppCompatActivity implements Validat
                             user.put("status", status);
                             user.put("university", institusi);
 
-                            db.collection("diasporas")
+                            LoginActivity.db
+                                    .collection("diasporas")
                                     .add(user)
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override

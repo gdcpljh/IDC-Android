@@ -7,6 +7,7 @@ import android.support.multidex.MultiDex;
 import android.support.v4.content.ContextCompat;
 
 import com.ale.rainbowsdk.RainbowSdk;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.id.connect.diaspora.MainActivity;
 import com.id.connect.diaspora.R;
 

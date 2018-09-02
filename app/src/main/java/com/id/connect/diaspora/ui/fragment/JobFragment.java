@@ -1,6 +1,5 @@
 package com.id.connect.diaspora.ui.fragment;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,44 +11,40 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.id.connect.diaspora.MainActivity;
 import com.id.connect.diaspora.R;
 import com.id.connect.diaspora.adapter.FeedAdapter;
+import com.id.connect.diaspora.adapter.JobAdapter;
+import com.id.connect.diaspora.model.JobModel;
 import com.id.connect.diaspora.model.StoryModel;
-import com.id.connect.diaspora.service.MessengerService;
 import com.id.connect.diaspora.ui.activity.LoginActivity;
-import com.id.connect.diaspora.utils.Util;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FeedFragment extends Fragment {
+public class JobFragment extends Fragment {
 
     @BindView(R.id.rv_feed)
     RecyclerView rv_feed;
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout swipe_refresh;
-    private FeedAdapter mAdapter;
-    private ArrayList<StoryModel> storyList;
+    private JobAdapter mAdapter;
+    private ArrayList<JobModel> storyList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_feed, container, false);
+        View view = inflater.inflate(R.layout.fragment_job, container, false);
         ButterKnife.bind(this, view);
         initView();
         setUpRv();
-        loadStory();
+        loadJob();
         return view;
     }
 
@@ -57,7 +52,7 @@ public class FeedFragment extends Fragment {
         swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                loadStory();
+                loadJob();
             }
         });
     }
@@ -66,30 +61,32 @@ public class FeedFragment extends Fragment {
         storyList = new ArrayList<>();
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rv_feed.setLayoutManager(mLayoutManager);
-        mAdapter = new FeedAdapter(getContext(), storyList);
+        mAdapter = new JobAdapter(getContext(), storyList);
         rv_feed.setAdapter(mAdapter);
     }
 
-    private void loadStory() {
+    private void loadJob() {
         storyList.clear();
         swipe_refresh.setRefreshing(true);
         LoginActivity.db
-                .collection("story")
+                .collection("jobs")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                String story_key = document.getId();
-                                String diaspora_key = document.getData().get("diaspora_key").toString();
-                                String created_at = document.getData().get("created_at").toString();
-                                String status = document.getData().get("status").toString();
-                                String image = document.getData().get("img_url").toString();
-                                StoryModel story = new StoryModel(story_key, diaspora_key, status, created_at, image);
+                                String job_key = document.getId();
+                                String company = document.getData().get("company_name").toString();
+                                String desc = document.getData().get("description").toString();
+                                String job_id = document.getData().get("job_id").toString();
+                                String location = document.getData().get("location").toString();
+                                String position = document.getData().get("position").toString();
+                                String published = document.getData().get("published_by").toString();
+                                JobModel story = new JobModel(job_key, company, desc, job_id, location, position, published);
                                 storyList.add(story);
                                 mAdapter.notifyDataSetChanged();
-                                Log.d("diaspora", diaspora_key);
+                                Log.d("diaspora", job_key);
                             }
                             swipe_refresh.setRefreshing(false);
                         } else {

@@ -1,10 +1,12 @@
 package com.id.connect.diaspora.ui.fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.ale.infra.contact.IRainbowContact;
@@ -13,9 +15,16 @@ import com.ale.rainbowsdk.RainbowSdk;
 import com.id.connect.diaspora.R;
 import com.id.connect.diaspora.adapter.ContactsAdapter;
 import com.id.connect.diaspora.utils.Util;
+import com.pixplicity.fontview.FontAppCompatTextView;
+import com.pixplicity.fontview.FontTextView;
 
 import java.util.Iterator;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import static org.webrtc.ContextUtils.getApplicationContext;
 
 /**
  * Created by Alcatel-Dev on 04/09/2017.
@@ -24,11 +33,16 @@ import java.util.List;
 public class ContactsFragment extends Fragment {
     private ListView listView;
     private ContactsAdapter contactsAdapter;
+    @BindView(R.id.newTask)
+    FontAppCompatTextView newTask;
+    @BindView(R.id.img_feed)
+    ImageView img_feed;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_contacts, container, false);
+        ButterKnife.bind(this, v);
 
         ContactsFragmentViewHolder viewHolder = new ContactsFragmentViewHolder(v);
         this.listView = (ListView) viewHolder.listView;
@@ -39,16 +53,18 @@ public class ContactsFragment extends Fragment {
         listView.setLongClickable(true);
 
         RainbowSdk.instance().contacts().getRainbowContacts().registerChangeListener(contactsChangeListener);
+        newTask.setText("Contact");
+        img_feed.setImageResource(R.drawable.ico_contact);
         return v;
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
     }
 
@@ -72,22 +88,22 @@ public class ContactsFragment extends Fragment {
         }
     };
 
-    private List<IRainbowContact> nonBotContact(){
+    private List<IRainbowContact> nonBotContact() {
         List<IRainbowContact> contacts = RainbowSdk.instance().contacts().getRainbowContacts().getCopyOfDataList();
 
         Iterator iterator = contacts.iterator();
         while (iterator.hasNext()) {
             IRainbowContact _c = (IRainbowContact) iterator.next();
-            if(_c.isBot()){
+            if (_c.isBot()) {
                 iterator.remove();
             }
         }
 
-        for(int i=0; i<contacts.size(); i++){
-            if(contacts.get(i).getImJabberId().equals(Util.BOT_JABBER_ID)){
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).getImJabberId().equals(Util.BOT_JABBER_ID)) {
                 IRainbowContact tempContact = contacts.get(i);
-                for(int j=i; j>0; j--){
-                    contacts.set(j, contacts.get(j-1));
+                for (int j = i; j > 0; j--) {
+                    contacts.set(j, contacts.get(j - 1));
                 }
                 contacts.set(0, tempContact);
                 break;
@@ -97,9 +113,10 @@ public class ContactsFragment extends Fragment {
     }
 }
 
-class ContactsFragmentViewHolder{
+class ContactsFragmentViewHolder {
     public ListView listView;
-    public ContactsFragmentViewHolder(View v){
+
+    public ContactsFragmentViewHolder(View v) {
         this.listView = v.findViewById(R.id.contacts_list);
     }
 }

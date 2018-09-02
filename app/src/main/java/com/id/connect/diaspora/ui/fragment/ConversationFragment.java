@@ -3,12 +3,14 @@ package com.id.connect.diaspora.ui.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.ale.infra.contact.Contact;
@@ -20,8 +22,16 @@ import com.ale.rainbowsdk.RainbowSdk;
 import com.id.connect.diaspora.R;
 import com.id.connect.diaspora.adapter.ConversationsAdapter;
 import com.id.connect.diaspora.utils.Util;
+import com.pixplicity.fontview.FontAppCompatTextView;
+import com.pixplicity.fontview.FontTextView;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
+
+import static org.webrtc.ContextUtils.getApplicationContext;
 
 public class ConversationFragment extends Fragment {
     private ConversationsAdapter conversationsAdapterBot = null;
@@ -31,12 +41,16 @@ public class ConversationFragment extends Fragment {
     private ListView listViewBot;
     private ListView listViewContactService;
     private FloatingActionButton broadcastBtn;
+    @BindView(R.id.newTask)
+    FontAppCompatTextView newTask;
+    @BindView(R.id.img_feed)
+    ImageView img_feed;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_conversation, container, false);
-
+        ButterKnife.bind(this, v);
 //        this.listViewBot = (ListView) v.findViewById(R.id.conversations_list_bot);
 //        this.conversationsAdapterBot = new ConversationsAdapter(getActivity(), new ArrayList<IRainbowConversation>());
 //        listViewBot.setAdapter(conversationsAdapterBot);
@@ -55,6 +69,8 @@ public class ConversationFragment extends Fragment {
         this.broadcastBtn = (FloatingActionButton) v.findViewById(R.id.btn_broadcast);
         this.broadcastBtn.setOnClickListener(broadcasrListener);
 
+        newTask.setText("Messages");
+        img_feed.setImageResource(R.drawable.ico_messages);
         return v;
     }
 

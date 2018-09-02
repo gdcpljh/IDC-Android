@@ -15,42 +15,28 @@
             android:id="@+id/relLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/relLayout1"
             android:background="@color/white">
 
             <LinearLayout
                 android:id="@+id/linLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="100">
-
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="25dp"
+                    android:layout_marginStart="20dp"
                     android:layout_weight="25">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_photo"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_centerVertical="true"
                         app:civ_border_color="@color/black"
-                        app:civ_border_width="0.5dp"/>
+                        app:civ_border_width="0.5dp"
+                        android:layout_marginTop="12dp"/>
 
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_weight="75">
-
-                    <include layout="@layout/snippet_top_profile"/>
 
                 </RelativeLayout>
 
@@ -64,33 +50,50 @@
                 android:layout_below="@+id/linLayout"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:background="@drawable/white_grey_border_bottom">
+                android:background="@drawable/grey_border_bottom">
 
                 <TextView
-                    android:id="@+id/display_name"
+                    android:id="@+id/tv_nama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mitch"
+                    android:text="Arrival"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/description"
+                    android:id="@+id/tv_hometown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="I live in Vancouver, BC"
+                    android:text="Bandung"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
 
                 <TextView
-                    android:id="@+id/website"
+                    android:id="@+id/tv_speciality"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="https://codingwithmitch.com"
-                    android:textColor="@color/link_blue"
+                    android:text="Software Engineer"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_university"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Beijing Institute of Technology"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Undergraduate (S1)"
                     android:textSize="16sp"
                     />
 
@@ -105,8 +108,8 @@
                 android:layout_marginBottom="50dp"
                 >
 
-                <GridView
-                    android:id="@+id/gridView"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_post"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -116,7 +119,7 @@
                     android:verticalSpacing="1dp">
 
 
-                </GridView>
+                </android.support.v7.widget.RecyclerView>
 
 
             </RelativeLayout>

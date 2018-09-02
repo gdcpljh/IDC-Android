@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
         //mTaskListPresenter = new TaskListPresenter(this);
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
         sectionsPagerAdapter.addFragment(new FeedFragment(), getResources().getString(R.string.tab_label_feed));
-        sectionsPagerAdapter.addFragment(new FeedFragment(), getResources().getString(R.string.tab_label_jobs));
+        sectionsPagerAdapter.addFragment(new JobFragment(), getResources().getString(R.string.tab_label_jobs));
 
         viewPager.setAdapter(sectionsPagerAdapter);
         viewPager.setOffscreenPageLimit(2);

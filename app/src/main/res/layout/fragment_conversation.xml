@@ -27,6 +27,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <include layout="@layout/tab_menu_fragment" />
+
             <ListView
                 android:id="@+id/conversations_list_bot"
                 android:layout_width="match_parent"

@@ -136,7 +136,12 @@ public class ProfileFragment extends Fragment {
                                     tv_status.setText(document.getData().get("status").toString());
                                     tv_university.setText(document.getData().get("university").toString());
                                     tv_hometown.setText(document.getData().get("hometown").toString());
-                                    Picasso.get().load(document.getData().get("profile_pic").toString()).into(profile_photo);
+
+                                    try {
+                                        Picasso.get().load(document.getData().get("profile_pic").toString()).into(profile_photo);
+                                    } catch (Exception ex) {
+                                        profile_photo.setImageDrawable(getContext().getDrawable(R.drawable.diaspora_logo));
+                                    }
                                 }
                             }
                         } else {

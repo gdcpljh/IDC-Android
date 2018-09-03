@@ -7,9 +7,11 @@ import android.support.multidex.MultiDex;
 import android.support.v4.content.ContextCompat;
 
 import com.ale.rainbowsdk.RainbowSdk;
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.id.connect.diaspora.MainActivity;
 import com.id.connect.diaspora.R;
+import io.fabric.sdk.android.Fabric;
 
 public class MessengerService extends Application {
     private static MessengerService mInstance;
@@ -23,6 +25,7 @@ public class MessengerService extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
 
         mInstance = this;
         RainbowSdk.instance().setNotificationBuilder(

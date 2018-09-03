@@ -62,6 +62,9 @@
         <activity android:name=".ui.activity.RegisterSecondActivity" />
         <activity android:name=".ui.activity.RoomDetailActivity" />
         <activity android:name=".ui.activity.InAppBrowserActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="29e28c91767de856a7620df211af41b40470e897" />
     </application>
 
 </manifest>

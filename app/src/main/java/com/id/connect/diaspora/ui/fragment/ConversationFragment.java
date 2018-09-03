@@ -70,7 +70,7 @@ public class ConversationFragment extends Fragment {
         this.broadcastBtn.setOnClickListener(broadcasrListener);
 
         newTask.setText("Messages");
-        img_feed.setImageResource(R.drawable.ico_messages);
+        img_feed.setImageResource(R.drawable.comment_text_outline);
         return v;
     }
 

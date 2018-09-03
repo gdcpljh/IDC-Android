@@ -54,7 +54,7 @@ public class ContactsFragment extends Fragment {
 
         RainbowSdk.instance().contacts().getRainbowContacts().registerChangeListener(contactsChangeListener);
         newTask.setText("Contact");
-        img_feed.setImageResource(R.drawable.ico_contact);
+        img_feed.setImageResource(R.drawable.feature_search_outline);
         return v;
     }
 

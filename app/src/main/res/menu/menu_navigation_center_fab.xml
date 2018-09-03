@@ -8,11 +8,7 @@
 
     <item
         android:id="@+id/i_contact"
-<<<<<<< HEAD
-        android:icon="@drawable/ico_contact"
-=======
         android:icon="@drawable/feature_search_outline"
->>>>>>> master
         android:title="@string/contact" />
 
     <!--must set the item title to empty-->
@@ -22,11 +18,7 @@
 
     <item
         android:id="@+id/i_chat"
-<<<<<<< HEAD
-        android:icon="@drawable/ico_messages"
-=======
         android:icon="@drawable/comment_text_outline"
->>>>>>> master
         android:title="@string/chat" />
 
     <item

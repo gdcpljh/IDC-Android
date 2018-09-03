@@ -85,6 +85,7 @@ public class ProfileFragment extends Fragment {
         rv_post.setAdapter(mAdapter);
     }
 
+    StoryModel story;
     private void loadJob() {
         SharedPreferences sp = getContext().getSharedPreferences("userLogin", MODE_PRIVATE);
         String diaspora_key1 = sp.getString(Util.DIASPORAS_CODE, "");
@@ -102,8 +103,12 @@ public class ProfileFragment extends Fragment {
                                 String diaspora_key = document.getData().get("diaspora_key").toString();
                                 String created_at = document.getData().get("created_at").toString();
                                 String status = document.getData().get("status").toString();
-                                String image = document.getData().get("img_url").toString();
-                                StoryModel story = new StoryModel(story_key, diaspora_key, status, created_at, image);
+                                try {
+                                    String image = document.getData().get("img_url").toString();
+                                    story = new StoryModel(story_key, diaspora_key, status, created_at, image);
+                                } catch (Exception ex) {
+                                    story = new StoryModel(story_key, diaspora_key, status, created_at, "");
+                                }
 
                                 if(diaspora_key.equals(diaspora_key1)) {
                                     storyList.add(story);

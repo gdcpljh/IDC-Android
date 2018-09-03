@@ -31,13 +31,12 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity android:name=".ui.activity.ChatActivity" />
-        <activity android:name=".ui.activity.LoginActivity" >
-
+        <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +49,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ui.activity.VoiceCallActivity" >
+        <activity android:name=".ui.activity.VoiceCallActivity">
             <intent-filter>
                 <action android:name="act_rainbow_display_call_screen" />
 
@@ -61,7 +60,8 @@
         <activity android:name=".ui.activity.ChatRoomActivity" />
         <activity android:name=".ui.activity.RegisterFirstActivity" />
         <activity android:name=".ui.activity.RegisterSecondActivity" />
-        <activity android:name=".ui.activity.RoomDetailActivity"></activity>
+        <activity android:name=".ui.activity.RoomDetailActivity" />
+        <activity android:name=".ui.activity.InAppBrowserActivity"></activity>
     </application>
 
 </manifest>

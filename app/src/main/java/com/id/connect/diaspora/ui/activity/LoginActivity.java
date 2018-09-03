@@ -220,7 +220,10 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 @Override
                 public void run() {
                     pDialog.dismiss();
-                    Toasty.error(getBaseContext(), "Account not registered at Rainbow, please register for Rainbow Platform").show();
+                    Intent intent = new Intent(LoginActivity.this, InAppBrowserActivity.class);
+                    intent.putExtra("url", "https://web.openrainbow.com/app/1.45.3/index.html#/subscribe");
+                    startActivity(intent);
+                    Toasty.info(getBaseContext(), "Account not registered at Rainbow, please register for Rainbow Platform").show();
                 }
             });
         }
